@@ -1,0 +1,13 @@
+RewriteEngine on
+
+
+#Seo url oluşturma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php 
+
+
+
+RewriteRule ^urunler-([0-9a-zA-Z-_]+)-([0-9]+)$  urunler.php?sef=$1&kategori_id=$2 [L,QSA]
+
+RewriteRule ^urun-detay-([0-9a-zA-Z-_]+)-([0-9]+)$  urun-detay.php?sef=$1&urun_id=$2 [L,QSA]
